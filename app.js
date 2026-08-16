@@ -1,4 +1,8 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./openapi.json');
+
+
 const app = express();
 app.use(express.json());
 
@@ -8,6 +12,10 @@ let tasks = [
   { id: 3, title: "Build API", done: false }
 ];
 let nextId = 4;
+
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 app.get('/', (req, res) => {
   res.json({
