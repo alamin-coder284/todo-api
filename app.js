@@ -89,7 +89,7 @@ app.get("/tasks/:id", (req, res) => {
 app.post("/tasks", (req, res) => {
   const { title } = req.body;
 
-  // Validate: title must exist and not be empty
+
   if (!title || title.trim() === "") {
     return res.status(400).json({ error: "Title is required" });
   }
@@ -112,7 +112,6 @@ app.put("/tasks/:id", (req, res) => {
     return res.status(404).json({ error: `Task ${id} not found` });
   }
 
-  // Validate: at least one field must be provided
   if (title === undefined && done === undefined) {
     return res.status(400).json({ error: "No fields to update" });
   }

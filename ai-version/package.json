@@ -1,0 +1,15 @@
+{
+  "name": "ai-version",
+  "version": "1.0.0",
+  "description": "A simple Todo API built with Node.js and Express, with in-memory storage and Swagger UI docs.",
+  "main": "app.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
