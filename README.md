@@ -77,6 +77,22 @@ Example:
 
 ![Swagger UI](./swagger.png)
 
+
+## Optional
+### The Mortality Experiment
+
+I tested what happens when the server restarts:
+
+1. Started the server and added 3 new tasks
+2. Verified they appeared in `GET /tasks`
+3. Stopped the server with `Ctrl+C`
+4. Restarted the server
+5. Ran `GET /tasks` again — the new tasks were gone!
+
+**What happened:** The tasks were stored in memory (RAM), which is wiped clean when the server process ends. Only the hard-coded initial tasks remained.
+
+**Why this matters:** Real applications need persistent storage. In Week 3, we'll add a database so data survives server restarts — this is the entire reason Week 3 exists.
+
 ## Author
 
 **Md Alamin**
